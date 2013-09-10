@@ -1,25 +1,38 @@
-def odd_or_even(number)
-  if number.even?
-    "It is even"
-  elsif number.odd?
-    "It is odd!"
+def odd_or_even(num)
+  @odd_array = []
+  @even_array = []
+ 
+  if num == 0
+    "that is not a valid number"
+    elsif num%2 == 0
+      @even_array << num
+      "It is even"
+      
+    else
+      @odd_array << num
+      "It is odd" 
   end
 end
  
-puts "What is the number?"
-number = gets.chomp.to_i
-puts odd_or_even(number)
-
-input = ""
+wants_another_number = "yes"
  
-until input == 'n'
-  puts "\nWould you like to provide another number(Y/N)?"
-  input = gets.chomp
-
-  if input == 'y'
-    puts "What is the number?"
-    input = gets.chomp
-    puts odd_or_even(input.to_i)
-  end
-
+ 
+while wants_another_number == "yes"
+# step one ask for number
+  print "please enter a number > "
+  num = gets.chomp.to_i
+ 
+#   answer odd / even
+  puts odd_or_even(num)
+# every time i enter a number
+# the loop will puts the last number entered
+# how do I store each instance
+ 
+#   ask if they want to classify another
+  print "would you like to provide another number? (yes/no)"
+  wants_another_number = gets.chomp.downcase
 end
+
+##how do i store each numver thats in the loop
+puts "Odd Numbers (#{@odd_array.size} total): #{@odd_array}"
+puts "Even Numbers (#{@even_array.size} total): #{@even_array}"
