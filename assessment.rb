@@ -1,7 +1,7 @@
-def odd_or_even(num)
   @odd_array = []
   @even_array = []
- 
+
+def odd_or_even(num) 
   if num == 0
     "that is not a valid number"
     elsif num%2 == 0
@@ -24,9 +24,6 @@ while wants_another_number == "yes"
  
 #   answer odd / even
   puts odd_or_even(num)
-# every time i enter a number
-# the loop will puts the last number entered
-# how do I store each instance
  
 #   ask if they want to classify another
   print "would you like to provide another number? (yes/no)"
